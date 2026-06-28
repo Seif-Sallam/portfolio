@@ -120,8 +120,8 @@
       background:color-mix(in srgb,var(--accent) 2.5%,#FEFDFB)}
 
     .bul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.85rem}
-    .bul li{display:flex;gap:.8rem}
-    .bul li::before{content:"";flex:none;width:16px;height:2px;margin-top:.62em;background:var(--accent);border-radius:2px}
+    .bul li{display:block;padding-left:1.6rem;position:relative}
+    .bul li::before{content:"";position:absolute;left:0;top:.68em;width:16px;height:2px;background:var(--accent);border-radius:2px}
     .bul b{font-weight:600}
 
     .chip{display:inline-flex;align-items:center;gap:.4rem;font-family:ui-monospace,Menlo,monospace;
@@ -256,7 +256,7 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
               Cairo, Egypt
             </p>
-            <p class="lead" style="font-size:1.12rem;max-width:34rem">I build the quiet backend systems that keep things moving — services, queues, and the queries underneath. Scroll down; I'll walk you through the stops.</p>
+            <p class="lead" style="font-size:1.12rem;max-width:34rem">I work on backend systems: the services, queues, and databases that sit behind the product. Below is where I've been and what I built.</p>
             <div class="mt-8 flex flex-wrap gap-3">
               <a class="lnk" href="https://github.com/seif-sallam" target="_blank" rel="noopener noreferrer">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -297,7 +297,7 @@
               <h2 id="noon-h" class="h-sec">Noon</h2>
               <p class="role">Software Development Engineer&nbsp;I — Backend</p>
               <p class="meta">Sep 2025 – Present · Logistics team</p>
-              <p class="lead">On the Logistics line — building the backend that keeps people, vendors, and hubs moving in sync.</p>
+              <p class="lead">On the Logistics team, working across the services that coordinate drivers, vendors, and warehouses.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div class="barcode" style="width:184px;max-width:50vw">
@@ -317,11 +317,11 @@
 
         <article class="card reveal mt-8 p-6 sm:p-8" style="transition-delay:.05s">
           <ul class="bul">
-            <li>Backend engineer on the Logistics team, shipping features across three Python/FastAPI services — staff/workforce management, access control, and attendance — all backed by raw-SQL MySQL.</li>
-            <li><b>Routes records across hubs.</b> Built event-driven cross-service data sync over Google Cloud Pub/Sub spanning four backend systems, propagating workforce, vendor, and facility/hub records to keep a distributed platform consistent.</li>
-            <li><b>Optimizes the busiest routes.</b> Led a performance initiative across 10+ high-traffic API endpoints — rewriting hot SQL queries (LATERAL JOINs, CTEs), adding targeted composite indexes, and removing a Redis layer plus redundant DB round-trips to cut latency on the most-used workflows.</li>
-            <li><b>Runs the dispatch system.</b> Architected a reusable event-driven communications platform — a generic channel/event model with pluggable consumers — replacing a hard-coded notification stack and now powering automated audit-cycle email notifications.</li>
-            <li><b>Owns the manifest end-to-end.</b> Delivered core workforce features: an Overtime module used across three business units for 1,000+ employees, DA offboarding with cross-service session and cash-balance safety validations, and account suspension.</li>
+            <li>Backend engineer across three Python/FastAPI services: workforce management, access control, and attendance. All on MySQL with raw SQL.</li>
+            <li><b>Cross-service sync.</b> Built event-driven data propagation across four backend systems using Google Cloud Pub/Sub, so workforce, vendor, and facility records stay consistent across the platform.</li>
+            <li><b>Query performance.</b> Led a performance push on 10+ high-traffic endpoints: rewrote slow queries with LATERAL JOINs and CTEs, added composite indexes, and cut out a Redis caching layer and several redundant DB round-trips.</li>
+            <li><b>Notification system.</b> Replaced a hard-coded notification stack with a generic channel/event model and pluggable consumers. The same system now drives automated audit-cycle emails.</li>
+            <li><b>Workforce features.</b> Shipped an Overtime module used across 3 business units for 1,000+ employees, DA offboarding with session and cash-balance validation, and account suspension.</li>
           </ul>
         </article>
       </div>
@@ -335,7 +335,7 @@
               <h2 id="forces-h" class="h-sec">Egyptian Armed Forces</h2>
               <p class="role">Soldier — IT Division, Military Police Administration Unit</p>
               <p class="meta">Jul 2024 – Sep 2025</p>
-              <p class="lead">Eighteen months on the IT desk — turning paper-bound records into automated, queryable systems.</p>
+              <p class="lead">Fourteen months on the IT desk, mostly converting the paper-based processes the unit ran on into something automated.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div style="width:96px;max-width:34vw">
@@ -357,8 +357,8 @@
           <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
           <p class="font-mono accent-ink" style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 1.1rem">FILE // EAF-IT-2024 · STATUS: ARCHIVED</p>
           <ul class="bul">
-            <li>Maintained Oracle Forms, Reports, and databases through automation scripts that kept routine operations self-running.</li>
-            <li>Built internal web applications that became the unit's central records database — cutting paper usage by roughly 60%.</li>
+            <li>Maintained Oracle Forms, Reports, and databases. Wrote automation scripts so routine tasks ran without manual input.</li>
+            <li>Built internal web apps that became the unit's main records system, cutting paper usage by about 60%.</li>
           </ul>
         </article>
       </div>
@@ -372,7 +372,7 @@
               <h2 id="atomica-h" class="h-sec">Atomica.ai</h2>
               <p class="role">Software Engineer Intern → Software Engineer III</p>
               <p class="meta">Sep 2022 – Jul 2024</p>
-              <p class="lead">Two years building precision desktop tooling — from diffing engines to the apps that launch the lab.</p>
+              <p class="lead">Two years building desktop tooling for a diagnostic imaging company, starting as an intern and finishing as a mid-level engineer.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none;width:210px;max-width:60vw">
               <svg viewBox="0 0 210 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -392,9 +392,9 @@
 
         <article class="card reveal mt-8 p-6 sm:p-8" style="transition-delay:.05s">
           <ul class="bul">
-            <li><b>Built the diff engine.</b> Developed DPSX-Diff, a Git-inspired C++ library for diffing custom file formats — with a Qt/QML prototype visualizer to inspect every change.</li>
-            <li><b>Read the database's vitals.</b> Enhanced Object-Library, an SQL-based database visualizer — shipping features and UI/UX, and extending it to support the Wren scripting language for easier database access.</li>
-            <li><b>Wired up the lab.</b> Built Atomica-Launcher, a Qt/QML app for launching and managing flagship apps, and upgraded Auto-Test to run in CI.</li>
+            <li><b>DPSX-Diff.</b> A C++ library for diffing custom file formats, modeled after how Git tracks changes. Built a Qt/QML visualizer alongside it so you could inspect every diff visually.</li>
+            <li><b>Object-Library.</b> An SQL-based database visualizer. Added features and UI improvements, then extended it with Wren scripting support so users could query the database without touching raw SQL.</li>
+            <li><b>Atomica-Launcher.</b> A Qt/QML app for starting and managing the company's main tools. Also got Auto-Test wired into CI.</li>
           </ul>
         </article>
       </div>
@@ -410,7 +410,7 @@
                 <path class="draw" d="M3 8 C 50 3, 90 12, 142 7 S 232 3, 297 9" pathLength="1"/>
               </svg>
             </span>
-            <p class="lead">Five years on campus — earned the degree, then stayed to teach it.</p>
+            <p class="lead">Five years at AUC. I got the degree, then stayed two more years as a TA before I was done.</p>
           </div>
         </header>
 
@@ -425,8 +425,8 @@
             <p class="font-mono accent-ink" style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .8rem">Teaching Assistant</p>
             <p class="meta" style="margin-top:0">Feb 2021 – Dec 2023</p>
             <ul class="bul mt-4">
-              <li>TA across Operating Systems, Analysis &amp; Design of Algorithms, Computer Architecture, and Fundamentals of Computing.</li>
-              <li>Mentored students through core CS concepts and projects — Qt/C++ games and pipelined RISC-V processor implementations.</li>
+              <li>TA for Operating Systems, Algorithm Analysis and Design, Computer Architecture, and Fundamentals of Computing.</li>
+              <li>Helped students through CS fundamentals and lab projects, mostly Qt/C++ games and pipelined RISC-V processor implementations.</li>
             </ul>
           </article>
         </div>
@@ -439,7 +439,7 @@
           <div class="mt-5 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div style="max-width:40rem">
               <h2 id="projects-h" class="h-sec">Projects</h2>
-              <p class="lead">A few things I built for the love of the craft.</p>
+              <p class="lead">Side projects and coursework I'm still proud of.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div style="width:84px;max-width:30vw">
@@ -461,7 +461,7 @@
             <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
             <p class="font-mono accent-ink" style="font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .7rem">Build 01</p>
             <h3 style="margin:0;font-weight:600;font-size:1.18rem;letter-spacing:-.01em">Personalized Food-Ordering Chatbot</h3>
-            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">Senior project. Owned the choice and fine-tuning of the LLM powering a conversational ordering flow.</p>
+            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">Senior project. I picked and fine-tuned the LLM behind a chatbot that let you order food through conversation.</p>
             <div class="mt-5 flex flex-wrap gap-2"><span class="chip">PyTorch</span><span class="chip">LLM</span></div>
           </article>
 
@@ -469,7 +469,7 @@
             <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
             <p class="font-mono accent-ink" style="font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .7rem">Build 02</p>
             <h3 style="margin:0;font-weight:600;font-size:1.18rem;letter-spacing:-.01em">RIG — RISC-V32IM Simulator</h3>
-            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">An all-in-one assembler, disassembler, and simulator wrapped in a GUI — step through RISC-V by hand.</p>
+            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">An assembler, disassembler, and simulator for RISC-V32IM with a GUI. You can step through execution one instruction at a time.</p>
             <div class="mt-5 flex flex-wrap gap-2"><span class="chip">C++</span><span class="chip">SFML</span><span class="chip">ImGui</span></div>
           </article>
 
@@ -477,7 +477,7 @@
             <span class="cnr tl"></span><span class="cnr tr"></span><span class="cnr bl"></span><span class="cnr br"></span>
             <p class="font-mono accent-ink" style="font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;margin:0 0 .7rem">Build 03</p>
             <h3 style="margin:0;font-weight:600;font-size:1.18rem;letter-spacing:-.01em">SFMLEngine</h3>
-            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">An ECS-based mini game engine, with Asteroids and a maze generator built as proofs of concept.</p>
+            <p style="margin:.6rem 0 0;color:var(--ink-soft);flex:1">A small ECS-based game engine. Built Asteroids and a maze generator as proofs of concept.</p>
             <div class="mt-5 flex flex-wrap gap-2"><span class="chip">C++</span><span class="chip">SFML</span><span class="chip">ECS</span></div>
           </article>
         </div>
@@ -490,7 +490,7 @@
           <div class="mt-5 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div style="max-width:40rem">
               <h2 id="skills-h" class="h-sec">Skills</h2>
-              <p class="lead">The kit I bring to a problem.</p>
+              <p class="lead">What I actually work with.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div style="width:84px;max-width:30vw">
@@ -557,7 +557,7 @@
                   Spotify
                 </p>
                 <h3 style="margin:.45rem 0 0;font-weight:600;font-size:1.2rem;letter-spacing:-.01em">Now Playing</h3>
-                <p style="margin:.45rem 0 0;color:var(--ink-soft);font-size:.95rem">On rotation lately — still picking up the guitar on the side.</p>
+                <p style="margin:.45rem 0 0;color:var(--ink-soft);font-size:.95rem">On heavy rotation lately. Also slowly picking up the guitar.</p>
               </div>
               <div class="motif" aria-hidden="true" style="flex:none;width:48px;opacity:.85">
                 <svg viewBox="0 0 64 120" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -577,8 +577,8 @@
             <div>
               <p class="font-mono accent-ink" style="font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin:0">Now Reading</p>
               <h3 style="margin:.5rem 0 0;font-weight:600;font-size:1.2rem;letter-spacing:-.01em">On the nightstand</h3>
-              <p style="margin:.6rem 0 0;color:var(--ink-soft)">Currently reading — <b class="accent-ink" style="border-bottom:1.5px dashed currentColor" dir="rtl" lang="ar">في ممر الفئران</b> by أحمد خالد توفيق</p>
-              <p style="margin:.7rem 0 0;color:var(--ink-soft);font-size:.95rem">A few pages a night — fiction, systems, whatever's open.</p>
+              <p style="margin:.6rem 0 0;color:var(--ink-soft)">Currently reading: <a href="https://www.amazon.com/dp/9776467555" target="_blank" rel="noopener noreferrer" class="accent-ink" style="border-bottom:1.5px dashed currentColor;text-decoration:none" dir="rtl" lang="ar">في ممر الفئران</a> by أحمد خالد توفيق</p>
+              <p style="margin:.7rem 0 0;color:var(--ink-soft);font-size:.95rem">A few pages before bed. Mostly fiction, but I'll read anything.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none;width:60px">
               <svg viewBox="0 0 72 96" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -598,7 +598,7 @@
           <div class="mt-5 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div style="max-width:40rem">
               <h2 id="awards-h" class="h-sec">Awards</h2>
-              <p class="lead">A few that meant something.</p>
+              <p class="lead">A few worth mentioning.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div style="width:60px;max-width:22vw">
@@ -618,7 +618,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--accent);flex:none;margin-top:.2rem"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 17.3 5.8 20.9l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
               <div>
                 <p style="margin:0;font-weight:600">Certificate of Excellence</p>
-                <p style="margin:.2rem 0 0;color:var(--ink-soft);font-size:.95rem">Top 10% — Computer Science major</p>
+                <p style="margin:.2rem 0 0;color:var(--ink-soft);font-size:.95rem">Top 10%, Computer Science major</p>
               </div>
             </div>
             <p class="meta" style="margin:.2rem 0 0;white-space:nowrap">Spring 2023</p>
@@ -652,8 +652,8 @@
           <p class="eyebrow"><span class="tick"></span><span class="num">09</span> Last Stop</p>
           <div class="mt-5 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
             <div style="max-width:40rem">
-              <h2 id="contact-h" class="h-sec">Ship me a message</h2>
-              <p class="lead">That's the tour. If anything caught your eye, the line's open — send a note, a postcard, or just say hello.</p>
+              <h2 id="contact-h" class="h-sec">Get in touch</h2>
+              <p class="lead">That's everything. If something here looks interesting, feel free to reach out.</p>
             </div>
             <div class="motif" aria-hidden="true" style="flex:none">
               <div style="width:96px;max-width:32vw">
@@ -684,7 +684,7 @@
 
         <footer class="reveal" style="margin-top:4rem;border-top:1px solid var(--line);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between">
           <p class="meta" style="margin:0">© 2026 Seif Yehia Sallam · Cairo, Egypt</p>
-          <p class="meta" style="margin:0">Built as a single file — no frameworks were harmed.</p>
+          <p class="meta" style="margin:0">Built as a single HTML file. No frameworks.</p>
         </footer>
       </div>
     </section>
